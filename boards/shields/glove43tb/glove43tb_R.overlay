@@ -18,9 +18,19 @@
 };
 
 / {
-    /* LED用の選択定義 */
+    /* システムにLEDの制御先を教える */
     chosen {
         zmk,underglow = &led_strip;
+    };
+
+    /* LEDをSPIから切り離し、GPIO直接制御として定義 */
+    led_strip: led_strip {
+        compatible = "zmk,led-strip-gpio";
+        label = "LED_STRIP";
+        chain-length = <1>;
+        color-order = "grb";
+        /* Xiao BLEのD1(P0.06)ピンをLED制御に使用 */
+        chain-gpios = <&xiao_d 1 GPIO_ACTIVE_HIGH>;
     };
 
     /* トラックボールの挙動設定 */
@@ -74,9 +84,10 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>, <&gpio0 29 GPIO_ACTIVE_LOW>; /* 2つ目のCSピンを追加 */
+    /* トラックボール専用のCSピン1つに戻す */
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
-    /* トラックボール本体 */
+    /* トラックボール本体（SPI通信） */
     trackball: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
@@ -89,17 +100,5 @@
         invert-x;
         invert-y;
         cpi = <400>;
-    };
-
-    /* LEDテープ */
-    led_strip: ws2812@1 {
-        status = "okay";
-        compatible = "worldsemi,ws2812-spi";
-        reg = <1>;
-        spi-max-frequency = <4000000>;
-        chain-length = <1>;
-        spi-one-frame = <0x70>;
-        spi-zero-frame = <0x40>;
-        color-mapping = <0 1 2>;
     };
 };
