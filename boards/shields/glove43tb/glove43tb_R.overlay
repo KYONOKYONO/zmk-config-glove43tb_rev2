@@ -1,3 +1,8 @@
+/* LEDの定義そのものを削除して、ビルドエラーを物理的に回避する */
+/ {
+    /delete-node/ led_strip;
+};
+
 #include "glove43tb.dtsi"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <dt-bindings/zmk/input_transform.h>
@@ -18,7 +23,7 @@
 };
 
 / {
-    /* トラックボールの挙動設定 */
+    /* トラックボールの挙動設定（まこっちゃんのこだわり設定を維持） */
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
@@ -35,22 +40,14 @@
         };
     };
 
-    /* 電源スイッチのダミー定義（エラー回避用） */
+    /* 電源スイッチのダミー定義 */
     dummy_ext_power: ext-power {
         compatible = "zmk,ext-power-generic";
         control-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>;
         init-delay-ms = <0>;
     };
-
-    /* LEDを「光る機能」から完全に切り離す */
-    /* ここに chosen block (zmk,underglow) を書かないのがポイントです */
-    led_strip: led_strip {
-        compatible = "zmk,led-strip-gpio";
-        label = "LED_STRIP";
-        chain-length = <1>;
-        color-order = "grb";
-        chain-gpios = <&xiao_d 1 GPIO_ACTIVE_HIGH>;
-    };
+    
+    /* ここから「led_strip」の定義を完全に消しました。冒頭の /delete-node/ とセットで機能します */
 };
 
 &pinctrl {
