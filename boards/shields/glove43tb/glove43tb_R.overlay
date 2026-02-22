@@ -100,6 +100,6 @@
         chain-length = <1>; /* あの小さな穴のインジケーター1個分 */
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
-        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+        color-mapping = <0 1 2>;
     };
 };
