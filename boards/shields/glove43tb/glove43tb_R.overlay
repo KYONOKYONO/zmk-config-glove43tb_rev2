@@ -78,3 +78,28 @@
         cpi = <400>;  // マウス感度
     };
 };
+
+/* glove43tbのLED定義を追加 */
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
+
+/* トラックボールと同じSPIバスにLEDを同居させます */
+&spi0 {
+    led_strip: ws2812@1 {  /* トラックボールが@0なので、LEDは@1にします */
+        compatible = "worldsemi,ws2812-spi";
+        label = "WS2812";
+
+        /* SPI settings */
+        reg = <1>; /* ここも@1に合わせて1にします */
+        spi-max-frequency = <4000000>;
+
+        /* WS2812 settings */
+        chain-length = <1>; /* あの小さな穴のインジケーター1個分 */
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+    };
+};
