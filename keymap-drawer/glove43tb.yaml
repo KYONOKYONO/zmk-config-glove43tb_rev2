@@ -34,7 +34,7 @@ layers:
   - M
   - ','
   - .
-  - {t: RIGHT SHIFT, h: /}
+  - {t: INT RO, h: RIGHT SHIFT}
   - LCTRL
   - LEFT WIN
   - LEFT ALT
@@ -46,7 +46,7 @@ layers:
   - DEL
   '1':
   - {t: ▽, type: trans}
-  - Sft+&
+  - Sft+6
   - Sft+'
   - Sft+8
   - Sft+9
@@ -55,7 +55,7 @@ layers:
   - '#'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Sft+'
+  - Sft+7
   - $
   - '%'
   - '='
@@ -67,7 +67,7 @@ layers:
   - Sft+9
   - INT YEN
   - {t: ▽, type: trans}
-  - {t: Sft+_, h: LEFT SHIFT}
+  - {t: Sft+INT RO, h: LEFT SHIFT}
   - '!'
   - '['
   - '#'
@@ -89,11 +89,11 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   '2':
-  - '*'
+  - Sft+'
   - '7'
   - '8'
   - '9'
-  - +
+  - Sft+;
   - {t: ▽, type: trans}
   - F7
   - F8
@@ -105,7 +105,7 @@ layers:
   - '6'
   - '-'
   - Ctl+Alt+KP 0
-  - '*'
+  - Sft+'
   - {t: ▽, type: trans}
   - F4
   - F5
