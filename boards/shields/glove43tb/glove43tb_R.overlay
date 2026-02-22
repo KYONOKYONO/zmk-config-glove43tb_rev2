@@ -4,7 +4,7 @@
 #include <input/processors.dtsi>
 
 &default_transform {
-    col-offset = <6>;
+col-offset = <6>;
 };
 
 &kscan0 {
@@ -18,20 +18,32 @@
 };
 
 / {
+    /* トラックボールの挙動設定 */
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_temp_layer 4 700>;            // オートマウスレイヤー（AML）
+        input-processors = <&zip_temp_layer 4 700>;
 
         scroller {
-            layers = <5>;                                      // スクロールレイヤー
+            layers = <5>;
             input-processors = <
-                &zip_xy_to_scroll_mapper                       // XY移動でスクロール
-                &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // Y軸スクロール反転（これを別行で追加）
-                &zip_scroll_scaler 1 16                        // スクロール感度調整
+                &zip_xy_to_scroll_mapper
+                &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
+                &zip_scroll_scaler 1 16
             >;
         };
+    };
+
+    /* LED用の選択定義 */
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+
+    /* メンテナンス・エラー回避用の仮想電源スイッチ（末尾でもOKですがここにまとめました） */
+    ext_power: ext-power {
+        compatible = "zmk,ext-power-generic";
+        control-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>;
     };
 };
 
@@ -64,6 +76,7 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
+    /* トラックボール本体（アドレス0） */
     trackball: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
@@ -73,30 +86,17 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_Y>;
         y-input-code = <INPUT_REL_X>;
-        invert-x;     // マウス操作のX軸を反転
-        invert-y;     // マウス操作のY軸を反転
-        cpi = <400>;  // マウス感度
+        invert-x;
+        invert-y;
+        cpi = <400>;
     };
-};
 
-/* glove43tbのLED定義を追加 */
-/ {
-    chosen {
-        zmk,underglow = &led_strip;
-    };
-};
-
-/* トラックボールと同じSPIバスにLEDを同居させます */
-&spi0 {
-    led_strip: ws2812@1 {  /* トラックボールが@0なので、LEDは@1にします */
+    /* LEDテープ（アドレス1） */
+    led_strip: ws2812@1 {
         compatible = "worldsemi,ws2812-spi";
-
-        /* SPI settings */
-        reg = <1>; /* ここも@1に合わせて1にします */
+        reg = <1>;
         spi-max-frequency = <4000000>;
-
-        /* WS2812 settings */
-        chain-length = <1>; /* あの小さな穴のインジケーター1個分 */
+        chain-length = <1>;
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
         color-mapping = <0 1 2>;
