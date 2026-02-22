@@ -110,7 +110,7 @@
             bindings = <
 &kp Q             &kp W         &kp E         &kp R                   &kp T                                                     &kp Y        &kp U  &lt 5 I    &lt 5 O  &kp P
 &kp A             &kp S         &kp D         &kp F                   &kp G        &kp LS(LG(S))               &kp SQT          &kp H        &kp J  &kp K      &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                   &kp B        &kp SINGLE_QUOTE            &kp SEMICOLON    &kp N        &kp M  &kp COMMA  &kp DOT  &mt SLASH RIGHT_SHIFT
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                   &kp B        &kp SINGLE_QUOTE            &kp SEMICOLON    &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT INT_RO
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 LANG2  &lt 2 SPACE  &lt_to_layer_0 3 LANG1      &lt 7 BACKSPACE  &lt 1 ENTER                             &kp DEL
             >;
 
@@ -119,10 +119,10 @@
 
         layer_1 {
             bindings = <
-&trans                         &kp LS(AMPERSAND)  &kp LS(SINGLE_QUOTE)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)                      &trans  &kp RIGHT_BRACKET      &kp NON_US_HASH      &trans           &trans
-&kp LS(SQT)                    &kp DOLLAR         &kp PERCENT           &kp EQUAL         &trans            &trans      &trans  &trans  &kp LS(NUMBER_8)       &kp LS(NUMBER_9)     &kp INT_YEN      &trans
-&mt LEFT_SHIFT LS(UNDERSCORE)  &kp EXCLAMATION    &kp LEFT_BRACKET      &kp HASH          &trans            &trans      &trans  &trans  &kp LS(RIGHT_BRACKET)  &kp LS(NON_US_HASH)  &kp LS(INT_YEN)  &trans
-&trans                         &trans             &trans                &trans            &trans            &trans      &trans  &trans                                                               &trans
+&trans                     &kp LS(NUMBER_6)  &kp LS(SINGLE_QUOTE)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)                      &trans  &kp RIGHT_BRACKET      &kp NON_US_HASH      &trans           &trans
+&kp LS(NUMBER_7)           &kp DOLLAR        &kp PERCENT           &kp EQUAL         &trans            &trans      &trans  &trans  &kp LS(NUMBER_8)       &kp LS(NUMBER_9)     &kp INT_YEN      &trans
+&mt LEFT_SHIFT LS(INT_RO)  &kp EXCLAMATION   &kp LEFT_BRACKET      &kp HASH          &trans            &trans      &trans  &trans  &kp LS(RIGHT_BRACKET)  &kp LS(NON_US_HASH)  &kp LS(INT_YEN)  &trans
+&trans                     &trans            &trans                &trans            &trans            &trans      &trans  &trans                                                               &trans
             >;
 
             sensor-bindings = <&sensor_rotate_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -130,10 +130,10 @@
 
         layer_2 {
             bindings = <
-&kp ASTERISK       &kp N7  &kp N8  &kp N9  &kp PLUS                                                  &trans  &kp F7  &kp F8  &kp F9  &kp F12
-&kp SLASH          &kp N4  &kp N5  &kp N6  &kp MINUS      &kp LC(LA(KP_NUMBER_0))      &kp ASTERISK  &trans  &kp F4  &kp F5  &kp F6  &kp F11
-&mt LEFT_SHIFT N0  &kp N1  &kp N2  &kp N3  &kp LS(MINUS)  &kp KP_MULTIPLY              &kp SLASH     &trans  &kp F1  &kp F2  &kp F3  &kp F10
-&trans             &trans  &trans  &trans  &trans         &trans                       &trans        &trans                          &trans
+&kp LS(SINGLE_QUOTE)  &kp N7  &kp N8  &kp N9  &kp LS(SEMICOLON)                                                     &trans  &kp F7  &kp F8  &kp F9  &kp F12
+&kp SLASH             &kp N4  &kp N5  &kp N6  &kp MINUS          &kp LC(LA(KP_NUMBER_0))      &kp LS(SINGLE_QUOTE)  &trans  &kp F4  &kp F5  &kp F6  &kp F11
+&mt LEFT_SHIFT N0     &kp N1  &kp N2  &kp N3  &kp LS(MINUS)      &kp KP_MULTIPLY              &kp SLASH             &trans  &kp F1  &kp F2  &kp F3  &kp F10
+&trans                &trans  &trans  &trans  &trans             &trans                       &trans                &trans                          &trans
             >;
         };
 
