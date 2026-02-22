@@ -28,7 +28,7 @@ layers:
   - C
   - V
   - B
-  - Sft+;
+  - ''''
   - ;
   - N
   - M
@@ -48,8 +48,8 @@ layers:
   - {t: ▽, type: trans}
   - '&'
   - '*'
-  - (
-  - )
+  - Sft+8
+  - Sft+9
   - {t: ▽, type: trans}
   - ']'
   - '#'
@@ -63,7 +63,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Sft+(
+  - Sft+8
   - Sft+9
   - \
   - {t: ▽, type: trans}
@@ -75,8 +75,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '{'
-  - '}'
+  - Sft+]
+  - Sft+#
   - '|'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
