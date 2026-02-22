@@ -18,6 +18,11 @@
 };
 
 / {
+    /* LED用の選択定義 */
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+
     /* トラックボールの挙動設定 */
     trackball_listener {
         status = "okay";
@@ -35,12 +40,7 @@
         };
     };
 
-    /* LED用の選択定義 */
-    chosen {
-        zmk,underglow = &led_strip;
-    };
-
-    /* メンテナンス・エラー回避用の仮想電源スイッチ（ダミー名に変更済み） */
+    /* メンテナンス・エラー回避用の仮想電源スイッチ */
     dummy_ext_power: ext-power {
         compatible = "zmk,ext-power-generic";
         control-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>;
@@ -74,7 +74,7 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>, <&gpio0 29 GPIO_ACTIVE_LOW>; /* 2つ目のCSピンを追加 */
 
     /* トラックボール本体 */
     trackball: trackball@0 {
