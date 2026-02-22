@@ -130,19 +130,19 @@
 
         layer_2 {
             bindings = <
-&kp ASTERISK                &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                              &trans  &kp F7  &kp F8  &kp F9  &kp F12
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS  &kp LC(LA(KP_NUMBER_0))      &kp ASTERISK  &trans  &kp F4  &kp F5  &kp F6  &kp F11
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL  &kp KP_MULTIPLY              &kp SLASH     &trans  &kp F1  &kp F2  &kp F3  &kp F10
-&trans                      &trans           &trans           &trans           &trans     &trans                       &trans        &trans                          &trans
+&kp ASTERISK       &kp N7  &kp N8  &kp N9  &kp PLUS                                              &trans  &kp F7  &kp F8  &kp F9  &kp F12
+&kp SLASH          &kp N4  &kp N5  &kp N6  &kp MINUS  &kp LC(LA(KP_NUMBER_0))      &kp ASTERISK  &trans  &kp F4  &kp F5  &kp F6  &kp F11
+&mt LEFT_SHIFT N0  &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp KP_MULTIPLY              &kp SLASH     &trans  &kp F1  &kp F2  &kp F3  &kp F10
+&trans             &trans  &trans  &trans  &trans     &trans                       &trans        &trans                          &trans
             >;
         };
 
         ARROW {
             bindings = <
-&kp PAGE_UP     &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &kp PAGE_DOWN                                   &trans  &trans              &kp LG(UP_ARROW)  &trans             &trans
-&kp HOME        &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END        &trans      &kp LS(PRINTSCREEN)  &trans  &kp LG(LEFT_ARROW)  &kp LG(DOWN)      &kp LG(RIGHT)      &trans
-&kp LEFT_SHIFT  &trans           &trans          &trans           &trans         &trans      &kp LS(LG(S))        &trans  &kp LS(LG(LEFT))    &trans            &kp LS(LG(RIGHT))  &trans
-&trans          &trans           &trans          &trans           &trans         &trans      &kp BACKSPACE        &trans                                                           &trans
+&kp PAGE_UP     &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &kp PAGE_DOWN                                   &trans  &trans            &kp LG(UP_ARROW)  &trans             &trans
+&kp HOME        &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END        &trans      &kp LS(PRINTSCREEN)  &trans  &kp LG(LEFT)      &kp LG(DOWN)      &kp LG(RIGHT)      &trans
+&kp LEFT_SHIFT  &trans           &trans          &trans           &trans         &trans      &kp LS(LG(S))        &trans  &kp LS(LG(LEFT))  &trans            &kp LS(LG(RIGHT))  &trans
+&trans          &trans           &trans          &trans           &trans         &trans      &kp BACKSPACE        &trans                                                         &trans
             >;
         };
 
