@@ -4,7 +4,7 @@
 #include <input/processors.dtsi>
 
 &default_transform {
-col-offset = <6>;
+    col-offset = <6>;
 };
 
 &kscan0 {
@@ -40,10 +40,11 @@ col-offset = <6>;
         zmk,underglow = &led_strip;
     };
 
-    /* メンテナンス・エラー回避用の仮想電源スイッチ（末尾でもOKですがここにまとめました） */
+    /* メンテナンス・エラー回避用の仮想電源スイッチ（ダミー名に変更済み） */
     dummy_ext_power: ext-power {
         compatible = "zmk,ext-power-generic";
         control-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>;
+        init-delay-ms = <0>;
     };
 };
 
@@ -55,7 +56,6 @@ col-offset = <6>;
                 <NRF_PSEL(SPIM_MISO, 0, 4)>;
         };
     };
-
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
@@ -76,7 +76,7 @@ col-offset = <6>;
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
-    /* トラックボール本体（アドレス0） */
+    /* トラックボール本体 */
     trackball: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
@@ -91,8 +91,9 @@ col-offset = <6>;
         cpi = <400>;
     };
 
-    /* LEDテープ（アドレス1） */
+    /* LEDテープ */
     led_strip: ws2812@1 {
+        status = "okay";
         compatible = "worldsemi,ws2812-spi";
         reg = <1>;
         spi-max-frequency = <4000000>;
