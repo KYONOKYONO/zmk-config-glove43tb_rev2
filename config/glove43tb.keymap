@@ -209,10 +209,11 @@
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans                          &trans
             >;
 
-            // ここがポイント！既存の移動プロセッサをジェスチャーで上書き
+            // ここに「zip_temp_layer 8 2000」を加えることで、
+            // 「レイヤー8にいる間は普通の移動を黙らせろ！」という命令になります。
             trackball_listener {
                 device = <&trackball>;
-                input-processors = <&tb_web>, <&tb_undo>;
+                input-processors = <&zip_temp_layer 8 2000>, <&tb_web>, <&tb_undo>;
             };
         };
     };
