@@ -211,7 +211,7 @@
 
         layer_8 {
             bindings = <
-&uinput_msc_mouse_mode_msc_to_uinput_msc_mouse_mode_mmv // 門番（自動切り替え停止）
+&msc_to_mmv  // ★ここをこれに書き換え！
 &trans  &trans  &trans  &trans                                          &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &none   &none   &none   &none
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &none   &none   &trans  &none
