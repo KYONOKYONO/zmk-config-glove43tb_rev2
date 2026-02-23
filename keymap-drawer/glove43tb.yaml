@@ -353,7 +353,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   '8':
-  - '&msc_to_mmv'
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
