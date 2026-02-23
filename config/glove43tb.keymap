@@ -211,20 +211,17 @@
 
         layer_8 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB1  &mkp MB3  &mkp MB2
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4  &mkp MB4  &trans    &mkp MB5
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                                          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &none   &none   &none   &none
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &none   &none   &trans  &none
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans                          &trans
             >;
-
-            // ここに「zip_temp_layer 8 2000」を加えることで、
-            // 「レイヤー8にいる間は普通の移動を黙らせろ！」という命令になります。
 
             trackball_listener {
                 device = <&trackball>;
                 input-processors =
+                    <&zip_xy_scaler 0 1>, 
                     <&zip_temp_layer 8 2000>,
-                    <&zip_xy_scaler 0 1>, // ★これが勝利の鍵！残しておきます
                     <&tb_web>,
                     <&tb_undo>;
             };
