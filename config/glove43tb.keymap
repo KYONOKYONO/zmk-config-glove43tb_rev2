@@ -114,7 +114,7 @@
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 LANG2  &lt 2 SPACE  &lt_to_layer_0 3 LANG1      &lt 7 BACKSPACE  &lt 1 ENTER                             &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(SEMICOLON) LC(MINUS)>;
+            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(SEMICOLON)>;
         };
 
         layer_1 {
