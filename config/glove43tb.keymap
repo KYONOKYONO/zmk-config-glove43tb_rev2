@@ -209,7 +209,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans                          &trans
             >;
 
-            // --- 追加：レイヤー8専用のトラックボール設定 ---
+            // ここがポイント！既存の移動プロセッサをジェスチャーで上書き
             trackball_listener {
                 device = <&trackball>;
                 input-processors = <&tb_web>, <&tb_undo>;
