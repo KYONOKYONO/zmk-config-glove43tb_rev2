@@ -108,7 +108,7 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                   &kp T                                                     &kp Y        &kp U  &lt 5 I    &lt 5 O  &kp P
+&kp Q             &kp W         &kp E         &kp R                   &kp T                                                     &kp Y        &kp U  &lt 5 I    &lt 5 O  &lt 8 P
 &kp A             &kp S         &kp D         &kp F                   &kp G        &kp LS(LG(S))               &kp SQT          &kp H        &kp J  &kp K      &kp L    &kp MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                   &kp B        &kp SINGLE_QUOTE            &kp SEMICOLON    &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 LANG2  &lt 2 SPACE  &lt_to_layer_0 3 LANG1      &lt 7 BACKSPACE  &lt 1 ENTER                             &kp DEL
@@ -181,6 +181,15 @@
 &kp LC(A)  &trans     &trans     &kp LC(F)  &trans  &trans      &trans  &trans     &trans  &trans  &trans  &trans
 &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans  &trans      &trans  &kp LC(N)  &trans  &trans  &trans  &trans
 &trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans                             &trans
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
     };
