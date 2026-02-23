@@ -103,11 +103,11 @@
         };
 
         // --- 追加：トラックボール・ジェスチャーの定義 ---
-
+        // --- ① behaviorsセクション：感度を爆上げ ---
         tb_web: tb_web {
             compatible = "zmk,behavior-input-two-axis-as-key";
             #binding-cells = <0>;
-            threshold = <500>;
+            threshold = <150>; // ★500から150へ変更
             bindings =
                 <&kp LC(T)>,
                 <&kp LC(W)>,
@@ -120,7 +120,7 @@
         tb_undo: tb_undo {
             compatible = "zmk,behavior-input-two-axis-as-key";
             #binding-cells = <0>;
-            threshold = <500>;
+            threshold = <150>; // ★ここも揃えて150へ
 
             // 右上に弾いた時だけ「閉じたタブを戻す」
 
@@ -133,7 +133,7 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R      &kp T                                                     &kp Y        &kp U  &lt 5 I    &lt 5 O  &lt 8 P
+&kp Q             &kp W         &kp E         &kp R      &kp T                                                     &kp Y        &kp U  &lt 5 I    &lt 5 O  &mo 8    // ★Pを &mo 8 に
 &kp A             &kp S         &kp D         &kp F      &kp G        &kp LS(LG(S))               &kp SQT          &kp H        &kp J  &kp K      &kp L    &kp MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V      &kp B        &kp SINGLE_QUOTE            &kp SEMICOLON    &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &kp LANG2  &lt 2 SPACE  &lt_to_layer_0 3 LANG1      &lt 7 BACKSPACE  &lt 1 ENTER                             &lt 6 DEL
