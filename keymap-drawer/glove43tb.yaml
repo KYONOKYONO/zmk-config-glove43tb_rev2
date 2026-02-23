@@ -149,7 +149,7 @@ layers:
   - RIGHT ARROW
   - END
   - {t: ▽, type: trans}
-  - Sft+PRINTSCREEN
+  - Alt+PRINTSCREEN
   - {t: ▽, type: trans}
   - Gui+LEFT
   - Gui+DOWN
