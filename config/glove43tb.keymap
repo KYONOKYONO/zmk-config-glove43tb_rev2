@@ -114,7 +114,7 @@
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 LANG2  &lt 2 SPACE  &lt_to_layer_0 3 LANG1      &lt 7 BACKSPACE  &lt 1 ENTER                             &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&inc_dec_kp LC(SEMICOLON) LC(MINUS)>;
         };
 
         layer_1 {
@@ -140,7 +140,7 @@
         ARROW {
             bindings = <
 &kp PAGE_UP     &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &kp PAGE_DOWN                                   &trans  &trans            &kp LG(UP_ARROW)  &trans             &trans
-&kp HOME        &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END        &trans      &kp LS(PRINTSCREEN)  &trans  &kp LG(LEFT)      &kp LG(DOWN)      &kp LG(RIGHT)      &trans
+&kp HOME        &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END        &trans      &kp LA(PRINTSCREEN)  &trans  &kp LG(LEFT)      &kp LG(DOWN)      &kp LG(RIGHT)      &trans
 &kp LEFT_SHIFT  &trans           &trans          &trans           &trans         &trans      &kp LS(LG(S))        &trans  &kp LS(LG(LEFT))  &trans            &kp LS(LG(RIGHT))  &trans
 &trans          &trans           &trans          &trans           &trans         &trans      &kp BACKSPACE        &trans                                                         &trans
             >;
@@ -153,6 +153,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4  &mkp MB4  &trans    &mkp MB5
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         SCROLL {
