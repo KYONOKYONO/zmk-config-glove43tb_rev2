@@ -211,7 +211,7 @@
 
         layer_8 {
             bindings = <
-&msc_to_mmv  // ★ここをこれに書き換え！
+&none  // ★ここを &msc_to_mmv から &none に変更！
 &trans  &trans  &trans  &trans                                          &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &none   &none   &none   &none
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &none   &none   &trans  &none
@@ -221,7 +221,7 @@
             trackball_listener {
                 device = <&trackball>;
                 input-processors =
-                    <&zip_xy_scaler 0 1>,  // 0倍の魔法（移動を消す）
+                    <&zip_xy_scaler 0 1>,  // これが「移動量ゼロ」の本体
                     <&zip_temp_layer 8 2000>,
                     <&tb_web>, // ジェスチャー発動機
                     <&tb_undo>;
