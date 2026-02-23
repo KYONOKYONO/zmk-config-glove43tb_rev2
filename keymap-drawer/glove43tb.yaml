@@ -38,12 +38,12 @@ layers:
   - LCTRL
   - LEFT WIN
   - LEFT ALT
-  - {t: '&to_layer_0 LANG2', h: '6'}
+  - LANG2
   - {t: SPACE, h: '2'}
   - {t: '&to_layer_0 LANG1', h: ARROW}
   - {t: BACKSPACE, h: '7'}
   - {t: ENTER, h: '1'}
-  - DEL
+  - {t: DEL, h: '6'}
   '1':
   - {t: ▽, type: trans}
   - Sft+6
@@ -302,12 +302,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BT CLR ALL
+  - {t: ▽, type: trans}
+  - {t: BT CLR ALL, type: held}
   '7':
   - {t: ▽, type: trans}
   - Ctl+W
