@@ -353,7 +353,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   '8':
-  - '&uinput_msc_mouse_mode_msc_to_uinput_msc_mouse_mode_mmv'
+  - '&msc_to_mmv'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
