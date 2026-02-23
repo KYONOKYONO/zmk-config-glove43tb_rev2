@@ -10,7 +10,7 @@ layers:
   - U
   - {t: I, h: SCROLL}
   - {t: O, h: SCROLL}
-  - '8'
+  - {t: P, h: '8'}
   - A
   - S
   - D
