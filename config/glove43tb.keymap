@@ -67,6 +67,13 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
+        COMBO_ESC {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
     };
 
     macros {
@@ -221,10 +228,10 @@
                 device = <&trackball>;
                 input-processors =
                     <&zip_xy_scaler 0 1>,
-                    // これが「移動量ゼロ」の本体,
+                    // これが「移動量ゼロ」の本体,,
                     <&zip_temp_layer 8 2000>,
                     <&tb_web>,
-                    // ジェスチャー発動機,
+                    // ジェスチャー発動機,,
                     <&tb_undo>;
             };
         };
