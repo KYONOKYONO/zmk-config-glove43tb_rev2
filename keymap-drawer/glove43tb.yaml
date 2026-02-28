@@ -495,3 +495,6 @@ combos:
   k: '"'
 - p: [24, 25]
   k: '='
+- p: [0, 1]
+  k: ESC
+  l: [default]
