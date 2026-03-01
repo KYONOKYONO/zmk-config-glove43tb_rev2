@@ -37,13 +37,13 @@
             track-remainders;
         };
 
-// --- 修正：マウス移動をより強力に殺す設定 ---
+// --- 強硬手段：移動量そのものを完全に握りつぶす ---
         zip_no_mouse: zip_no_mouse {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
             type = <INPUT_EV_REL>;
-            // XとYの移動量を完全に0にするプロセッサにする
             codes = <INPUT_REL_X INPUT_REL_Y>;
+            // 移動量を0にするのではなく、プロセッサ全体をダミーにして何も通さないようにする
         };
     };
 };
@@ -240,12 +240,9 @@
 
             trackball_listener {
                 device = <&trackball>;
-                input-processors =
-                    // まず、ここでマウス移動を完全に0にしてから、
-                    <&zip_no_mouse 0 0>, 
-                    // 次にレイヤーを固定する
-                    <&zip_temp_layer 8 2000>,                
-                    <&tb_web>,
+                input-processors =                
+                    <&zip_no_mouse 0 0>, // マウスを止める
+                    <&tb_web>,           // ジェスチャー
                     <&tb_undo>;
             };
         };
