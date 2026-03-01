@@ -228,10 +228,10 @@
                 device = <&trackball>;
                 input-processors =
                     <&zip_xy_scaler 0 1>,
-                    // これが「移動量ゼロ」の本体,,
+                    // これが「移動量ゼロ」の本体,,,
                     <&zip_temp_layer 8 2000>,
                     <&tb_web>,
-                    // ジェスチャー発動機,,
+                    // ジェスチャー発動機,,,
                     <&tb_undo>;
             };
         };
@@ -247,10 +247,10 @@
 
         layer_10 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &kp LS(LC(NUMBER_7))  &kp LS(LC(NUMBER_8))  &kp LS(LC(NUMBER_9))  &trans                             &trans     &kp LC(Q)  &kp LC(E)      &kp LS(LC(H))  &trans
+&trans  &kp LS(LC(NUMBER_4))  &kp LS(LC(NUMBER_5))  &kp LS(LC(NUMBER_6))  &trans  &trans      &trans         &trans     &kp LC(R)  &kp LS(LC(R))  &kp LC(F)      &trans
+&trans  &kp LS(LC(NUMBER_1))  &kp LS(LC(NUMBER_2))  &kp LS(LC(NUMBER_3))  &trans  &trans      &trans         &kp LC(N)  &trans     &kp ESCAPE     &trans         &trans
+&trans  &trans                &trans                &trans                &trans  &trans      &kp BACKSPACE  &trans                                              &trans
             >;
         };
     };
