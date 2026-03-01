@@ -229,7 +229,7 @@
             >;
         };
 
-// --- 修正箇所：layer_8 の trackball_listener ---
+// --- 検証用：zip_no_mouseを外し、tb_webのみにする ---
         layer_8 {
             bindings = <
 &none   &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
@@ -240,9 +240,8 @@
 
             trackball_listener {
                 device = <&trackball>;
-                input-processors =                
-                    <&tb_web>,           // 1. 先にウェブジェスチャーを処理
-                    <&zip_no_mouse 0 0>; // 2. 後から移動を0にする
+                input-processors = 
+                    <&tb_web>; // シンプルにジェスチャーのみ
             };
         };
 
