@@ -36,6 +36,15 @@
             codes = <INPUT_REL_WHEEL>;
             track-remainders;
         };
+
+// --- 追加：マウス移動を殺すためのプロセッサ ---
+        zip_no_mouse: zip_no_mouse {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X INPUT_REL_Y>;
+            // 移動量を0にする
+        };
     };
 };
 
@@ -111,18 +120,22 @@
 
         // --- 追加：トラックボール・ジェスチャーの定義 ---
         // --- ① behaviorsセクション：感度を爆上げ ---
+        // ... (lt_to_layer_0, sensor_rotate_kp, mouse_wheel_scroll は変更なし) ...
+
+        // --- 修正：トラックボール・ジェスチャーの定義 ---
 
         tb_web: tb_web {
             compatible = "zmk,behavior-input-two-axis-as-key";
             #binding-cells = <0>;
             threshold = <500>; // ★500に戻して誤爆を防止！
             bindings =
-                <&kp LC(T)>,
-                <&kp LC(W)>,
-                <&kp LC(LS(TAB))>,
-                <&kp LC(TAB)>;
+                <&kp LC(LS(TAB))>, // 左: 前タブ
+                <&kp LC(TAB)>,     // 右: 次タブ
+                <&kp LC(W)>,       // 下: 閉じる
+                <&kp LC(T)>;       // 上: 新規タブ
 
-            // 順序：上(新タブ), 下(閉じる), 左(前タブ), 右(次タブ)
+            // 修正案：直感に合わせて順序を入れ替えました
+            // 左(前), 右(次), 下(閉), 上(新)
         };
 
         tb_undo: tb_undo {
@@ -130,8 +143,8 @@
             #binding-cells = <0>;
             threshold = <500>; // ★ここも500へ
             // 右上に弾いた時だけ「閉じたタブを戻す」
-
-            bindings = <&none>, <&none>, <&none>, <&kp LC(LS(T))>;
+            // 順序：上, 下, 左, 右
+            bindings = <&kp LC(LS(T))>, <&none>, <&none>, <&none>;
         };
     };
 
@@ -227,11 +240,12 @@
             trackball_listener {
                 device = <&trackball>;
                 input-processors =
-                    <&zip_xy_scaler 0 1>,
-                    // これが「移動量ゼロ」の本体,,,
+                    // マウス移動を0にする
+                    <&zip_no_mouse 0 0>, 
+                    // レイヤー8固定
                     <&zip_temp_layer 8 2000>,
+                    // ジェスチャー発動機
                     <&tb_web>,
-                    // ジェスチャー発動機,,,
                     <&tb_undo>;
             };
         };
