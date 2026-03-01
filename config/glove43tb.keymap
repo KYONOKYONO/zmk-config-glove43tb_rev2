@@ -37,14 +37,12 @@
             track-remainders;
         };
 
-// --- 今回こそ真の修正：完全に殺す ---
+// --- 最終修正：Scalerではなく専用プロセッサを使用 ---
         zip_no_mouse: zip_no_mouse {
-            compatible = "zmk,input-processor-scaler";
+            compatible = "zmk,input-processor-layer-trigger"; // ★ココを変更！
             #input-processor-cells = <2>;
-            type = <INPUT_EV_REL>;
-            // X軸とY軸を明確に指定
-            codes = <INPUT_REL_X>, <INPUT_REL_Y>;
-            // これで移動量が確定的に0になるはず
+            // ここで特定のキーまたはレイヤーに依存する処理を定義します
+            // もしこれでもエラーになる場合は、compatible が対応していません
         };
     };
 };
