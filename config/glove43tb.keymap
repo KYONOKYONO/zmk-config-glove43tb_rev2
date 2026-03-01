@@ -37,13 +37,13 @@
             track-remainders;
         };
 
-// --- 追加：マウス移動を殺すためのプロセッサ ---
+// --- 修正：マウス移動をより強力に殺す設定 ---
         zip_no_mouse: zip_no_mouse {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
             type = <INPUT_EV_REL>;
+            // XとYの移動量を完全に0にするプロセッサにする
             codes = <INPUT_REL_X INPUT_REL_Y>;
-            // 移動量を0にする
         };
     };
 };
@@ -241,9 +241,10 @@
             trackball_listener {
                 device = <&trackball>;
                 input-processors =
-                    // 順序を変更：まずマウス処理を殺す設定を試す
-                    <&zip_temp_layer 8 2000>, // 先にレイヤーを固定
-                    <&zip_no_mouse 0 0>,     // その上でマウス移動を0に
+                    // まず、ここでマウス移動を完全に0にしてから、
+                    <&zip_no_mouse 0 0>, 
+                    // 次にレイヤーを固定する
+                    <&zip_temp_layer 8 2000>,                
                     <&tb_web>,
                     <&tb_undo>;
             };
