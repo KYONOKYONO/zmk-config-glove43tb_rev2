@@ -39,10 +39,11 @@
 
 // --- 最終修正：Scalerではなく専用プロセッサを使用 ---
         zip_no_mouse: zip_no_mouse {
-            compatible = "zmk,input-processor-layer-trigger"; // ★ココを変更！
+            compatible = "zmk,input-processor-scaler"; // ★ココを変更！
             #input-processor-cells = <2>;
-            // ここで特定のキーまたはレイヤーに依存する処理を定義します
-            // もしこれでもエラーになる場合は、compatible が対応していません
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X>, <INPUT_REL_Y>;
+            // 移動量を0にする役割に徹する
         };
     };
 };
