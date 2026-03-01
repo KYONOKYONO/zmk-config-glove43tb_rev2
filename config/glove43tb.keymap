@@ -241,11 +241,8 @@
             trackball_listener {
                 device = <&trackball>;
                 input-processors =                
-                    // 最初に絶対的にマウスを殺す
-                    <&zip_no_mouse 0 0>, 
-                    // その上でジェスチャー(ここがキモです)
-                    <&tb_web>,           
-                    <&tb_undo>;
+                    <&tb_web>,           // 1. 先にウェブジェスチャーを処理
+                    <&zip_no_mouse 0 0>; // 2. 後から移動を0にする
             };
         };
 
