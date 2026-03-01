@@ -229,6 +229,7 @@
             >;
         };
 
+// --- 修正箇所：layer_8 の trackball_listener ---
         layer_8 {
             bindings = <
 &none   &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
@@ -240,11 +241,9 @@
             trackball_listener {
                 device = <&trackball>;
                 input-processors =
-                    // マウス移動を0にする
-                    <&zip_no_mouse 0 0>, 
-                    // レイヤー8固定
-                    <&zip_temp_layer 8 2000>,
-                    // ジェスチャー発動機
+                    // 順序を変更：まずマウス処理を殺す設定を試す
+                    <&zip_temp_layer 8 2000>, // 先にレイヤーを固定
+                    <&zip_no_mouse 0 0>,     // その上でマウス移動を0に
                     <&tb_web>,
                     <&tb_undo>;
             };
