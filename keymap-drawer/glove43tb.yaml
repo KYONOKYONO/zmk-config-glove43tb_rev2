@@ -447,9 +447,9 @@ layers:
   - Sft+Ctl+9
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Ctl+Q
-  - Ctl+E
-  - Sft+Ctl+H
+  - Ctl+R
+  - Ctl+Sft+R
+  - Ctl+F
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+Ctl+4
@@ -459,9 +459,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Ctl+R
-  - Sft+Ctl+R
-  - Ctl+F
+  - Ctl+U
+  - Ctl+Q
+  - Ctl+E
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+Ctl+1
