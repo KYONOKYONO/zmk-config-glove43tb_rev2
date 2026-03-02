@@ -37,12 +37,14 @@
             track-remainders;
         };
 
-// --- 最終修正：Scalerではなく専用プロセッサを使用 ---
+        // --- 最終修正：Scalerではなく専用プロセッサを使用 ---
+
         zip_no_mouse: zip_no_mouse {
             compatible = "zmk,input-processor-scaler"; // ★ココを変更！
             #input-processor-cells = <2>;
             type = <INPUT_EV_REL>;
             codes = <INPUT_REL_X>, <INPUT_REL_Y>;
+
             // 移動量を0にする役割に徹する
         };
     };
@@ -121,7 +123,6 @@
         // --- 追加：トラックボール・ジェスチャーの定義 ---
         // --- ① behaviorsセクション：感度を爆上げ ---
         // ... (lt_to_layer_0, sensor_rotate_kp, mouse_wheel_scroll は変更なし) ...
-
         // --- 修正：トラックボール・ジェスチャーの定義 ---
 
         tb_web: tb_web {
@@ -129,11 +130,14 @@
             #binding-cells = <0>;
             threshold = <500>; // ★500に戻して誤爆を防止！
             bindings =
-                <&kp LC(LS(TAB))>, // 左: 前タブ
-                <&kp LC(TAB)>,     // 右: 次タブ
-                <&kp LC(W)>,       // 下: 閉じる
-                <&kp LC(T)>;       // 上: 新規タブ
-
+                <&kp LC(LS(TAB))>,
+                // 左: 前タブ,
+                <&kp LC(TAB)>,
+                // 右: 次タブ,
+                <&kp LC(W)>,
+                // 下: 閉じる,
+                <&kp LC(T)>;
+       // 上: 新規タブ
             // 修正案：直感に合わせて順序を入れ替えました
             // 左(前), 右(次), 下(閉), 上(新)
         };
@@ -144,6 +148,7 @@
             threshold = <500>; // ★ここも500へ
             // 右上に弾いた時だけ「閉じたタブを戻す」
             // 順序：上, 下, 左, 右
+
             bindings = <&kp LC(LS(T))>, <&none>, <&none>, <&none>;
         };
     };
@@ -229,7 +234,8 @@
             >;
         };
 
-// --- 検証用：zip_no_mouseを外し、tb_webのみにする ---
+        // --- 検証用：zip_no_mouseを外し、tb_webのみにする ---
+
         layer_8 {
             bindings = <
 &none   &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
@@ -240,8 +246,7 @@
 
             trackball_listener {
                 device = <&trackball>;
-                input-processors = 
-                    <&tb_web>; // シンプルにジェスチャーのみ
+                input-processors = <&tb_web>; // シンプルにジェスチャーのみ
             };
         };
 
@@ -256,10 +261,10 @@
 
         layer_10 {
             bindings = <
-&trans  &kp LS(LC(NUMBER_7))  &kp LS(LC(NUMBER_8))  &kp LS(LC(NUMBER_9))  &trans                             &trans     &kp LC(Q)  &kp LC(E)      &kp LS(LC(H))  &trans
-&trans  &kp LS(LC(NUMBER_4))  &kp LS(LC(NUMBER_5))  &kp LS(LC(NUMBER_6))  &trans  &trans      &trans         &trans     &kp LC(R)  &kp LS(LC(R))  &kp LC(F)      &trans
-&trans  &kp LS(LC(NUMBER_1))  &kp LS(LC(NUMBER_2))  &kp LS(LC(NUMBER_3))  &trans  &trans      &trans         &kp LC(N)  &trans     &kp ESCAPE     &trans         &trans
-&trans  &trans                &trans                &trans                &trans  &trans      &kp BACKSPACE  &trans                                              &trans
+&trans  &kp LS(LC(NUMBER_7))  &kp LS(LC(NUMBER_8))  &kp LS(LC(NUMBER_9))  &trans                             &trans     &kp LC(R)  &kp LC(LS(R))  &kp LC(F)  &trans
+&trans  &kp LS(LC(NUMBER_4))  &kp LS(LC(NUMBER_5))  &kp LS(LC(NUMBER_6))  &trans  &trans      &trans         &trans     &kp LC(U)  &kp LC(Q)      &kp LC(E)  &trans
+&trans  &kp LS(LC(NUMBER_1))  &kp LS(LC(NUMBER_2))  &kp LS(LC(NUMBER_3))  &trans  &trans      &trans         &kp LC(N)  &trans     &kp ESCAPE     &trans     &trans
+&trans  &trans                &trans                &trans                &trans  &trans      &kp BACKSPACE  &trans                                          &trans
             >;
         };
     };
