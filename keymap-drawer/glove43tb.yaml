@@ -138,10 +138,10 @@ layers:
   - UP ARROW
   - Ctl+TAB
   - PAGE DOWN
-  - {t: ▽, type: trans}
   - Gui+TAB
+  - TAB
   - Gui+UP ARROW
-  - {t: ▽, type: trans}
+  - Sft+TAB
   - {t: ▽, type: trans}
   - HOME
   - LEFT ARROW
@@ -174,7 +174,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - BACKSPACE
-  - {t: ▽, type: trans}
+  - LEFT ALT
   - {t: ▽, type: trans}
   MOUSE:
   - {t: ▽, type: trans}
