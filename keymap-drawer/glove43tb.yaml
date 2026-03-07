@@ -139,9 +139,9 @@ layers:
   - Ctl+TAB
   - PAGE DOWN
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Alt+TAB
   - Gui+UP ARROW
-  - {t: ▽, type: trans}
+  - Alt+Sft+TAB
   - {t: ▽, type: trans}
   - HOME
   - LEFT ARROW
@@ -150,11 +150,11 @@ layers:
   - END
   - {t: ▽, type: trans}
   - Alt+PRINTSCREEN
-  - {t: ▽, type: trans}
-  - Gui+LEFT
+  - Gui+LEFT ARROW
+  - Alt+LEFT
   - Gui+DOWN
-  - Gui+RIGHT
-  - {t: ▽, type: trans}
+  - Alt+RIGHT
+  - Gui+RIGHT ARROW
   - LEFT SHIFT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -164,7 +164,7 @@ layers:
   - Sft+Gui+S
   - {t: ▽, type: trans}
   - Sft+Gui+LEFT
-  - {t: ▽, type: trans}
+  - Alt+F4
   - Sft+Gui+RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -327,9 +327,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+RIGHT
+  - Ctl+K
+  - Ctl+LEFT
   - {t: ▽, type: trans}
   - Ctl+Z
   - Ctl+X
@@ -457,7 +457,7 @@ layers:
   - Sft+Ctl+6
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Alt+S
   - {t: ▽, type: trans}
   - Ctl+U
   - Ctl+Q
