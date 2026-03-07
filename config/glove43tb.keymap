@@ -131,13 +131,14 @@
             threshold = <500>; // ★500に戻して誤爆を防止！
             bindings =
                 <&kp LC(LS(TAB))>,
-                // 左: 前タブ,
+                // 左: 前タブ,,
                 <&kp LC(TAB)>,
-                // 右: 次タブ,
+                // 右: 次タブ,,
                 <&kp LC(W)>,
-                // 下: 閉じる,
+                // 下: 閉じる,,
                 <&kp LC(T)>;
-       // 上: 新規タブ
+
+            // 上: 新規タブ
             // 修正案：直感に合わせて順序を入れ替えました
             // 左(前), 右(次), 下(閉), 上(新)
         };
@@ -189,10 +190,10 @@
 
         ARROW {
             bindings = <
-&kp PAGE_UP     &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &kp PAGE_DOWN                                   &trans  &trans            &kp LG(UP_ARROW)  &trans             &trans
-&kp HOME        &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END        &trans      &kp LA(PRINTSCREEN)  &trans  &kp LG(LEFT)      &kp LG(DOWN)      &kp LG(RIGHT)      &trans
-&kp LEFT_SHIFT  &trans           &trans          &trans           &trans         &trans      &kp LS(LG(S))        &trans  &kp LS(LG(LEFT))  &trans            &kp LS(LG(RIGHT))  &trans
-&trans          &trans           &trans          &trans           &trans         &trans      &kp BACKSPACE        &trans                                                         &trans
+&kp PAGE_UP     &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &kp PAGE_DOWN                                   &trans              &kp LA(TAB)       &kp LG(UP_ARROW)  &kp LA(LS(TAB))    &trans
+&kp HOME        &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END        &trans      &kp LA(PRINTSCREEN)  &kp LG(LEFT_ARROW)  &kp LA(LEFT)      &kp LG(DOWN)      &kp LA(RIGHT)      &kp LG(RIGHT_ARROW)
+&kp LEFT_SHIFT  &trans           &trans          &trans           &trans         &trans      &kp LS(LG(S))        &trans              &kp LS(LG(LEFT))  &kp LA(F4)        &kp LS(LG(RIGHT))  &trans
+&trans          &trans           &trans          &trans           &trans         &trans      &kp BACKSPACE        &trans                                                                     &trans
             >;
         };
 
@@ -227,10 +228,10 @@
 
         layer_7 {
             bindings = <
-&trans     &kp LC(W)  &trans     &trans     &trans                      &kp LC(Y)  &trans  &trans  &trans  &trans
-&kp LC(A)  &trans     &trans     &kp LC(F)  &trans  &trans      &trans  &trans     &trans  &trans  &trans  &trans
-&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans  &trans      &trans  &kp LC(N)  &trans  &trans  &trans  &trans
-&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans                             &trans
+&trans     &kp LC(W)  &trans     &trans     &trans                      &kp LC(Y)  &trans         &trans     &trans        &trans
+&kp LC(A)  &trans     &trans     &kp LC(F)  &trans  &trans      &trans  &trans     &kp LC(RIGHT)  &kp LC(K)  &kp LC(LEFT)  &trans
+&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans  &trans      &trans  &kp LC(N)  &trans         &trans     &trans        &trans
+&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans                                             &trans
             >;
         };
 
@@ -262,7 +263,7 @@
         layer_10 {
             bindings = <
 &trans  &kp LS(LC(NUMBER_7))  &kp LS(LC(NUMBER_8))  &kp LS(LC(NUMBER_9))  &trans                             &trans     &kp LC(R)  &kp LC(LS(R))  &kp LC(F)  &trans
-&trans  &kp LS(LC(NUMBER_4))  &kp LS(LC(NUMBER_5))  &kp LS(LC(NUMBER_6))  &trans  &trans      &trans         &trans     &kp LC(U)  &kp LC(Q)      &kp LC(E)  &trans
+&trans  &kp LS(LC(NUMBER_4))  &kp LS(LC(NUMBER_5))  &kp LS(LC(NUMBER_6))  &trans  &trans      &kp LA(S)      &trans     &kp LC(U)  &kp LC(Q)      &kp LC(E)  &trans
 &trans  &kp LS(LC(NUMBER_1))  &kp LS(LC(NUMBER_2))  &kp LS(LC(NUMBER_3))  &trans  &trans      &trans         &kp LC(N)  &trans     &kp ESCAPE     &trans     &trans
 &trans  &trans                &trans                &trans                &trans  &trans      &kp BACKSPACE  &trans                                          &trans
             >;
