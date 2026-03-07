@@ -139,9 +139,9 @@ layers:
   - Ctl+TAB
   - PAGE DOWN
   - {t: ▽, type: trans}
-  - Alt+TAB
+  - Gui+TAB
   - Gui+UP ARROW
-  - Alt+Sft+TAB
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - HOME
   - LEFT ARROW
