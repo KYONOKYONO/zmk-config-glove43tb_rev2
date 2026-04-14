@@ -106,7 +106,7 @@ layers:
   - '-'
   - Ctl+Alt+KP 0
   - Sft+'
-  - {t: ▽, type: trans}
+  - .
   - F4
   - F5
   - F6
@@ -156,9 +156,9 @@ layers:
   - Alt+RIGHT
   - Gui+RIGHT ARROW
   - LEFT SHIFT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Sft+Ctl+LEFT
+  - Sft+Ctl+UP ARROW
+  - Sft+Ctl+RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+Gui+S
@@ -169,7 +169,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Sft+Ctl+DOWN
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
