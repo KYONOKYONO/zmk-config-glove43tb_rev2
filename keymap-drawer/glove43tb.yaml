@@ -28,7 +28,7 @@ layers:
   - C
   - V
   - B
-  - ''''
+  - {t: '''', h: '6'}
   - ;
   - N
   - M
@@ -43,7 +43,7 @@ layers:
   - {t: '&to_layer_0 LANG1', h: ARROW}
   - {t: BACKSPACE, h: '7'}
   - {t: ENTER, h: '1'}
-  - {t: DEL, h: '6'}
+  - DELETE
   '1':
   - {t: ▽, type: trans}
   - Sft+6
@@ -292,7 +292,7 @@ layers:
   - '2'
   - '3'
   - ''
-  - ''
+  - {type: held}
   - '&bootloader'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -307,7 +307,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   '7':
   - {t: ▽, type: trans}
   - Ctl+W
