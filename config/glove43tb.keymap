@@ -131,11 +131,11 @@
             threshold = <500>; // ★500に戻して誤爆を防止！
             bindings =
                 <&kp LC(LS(TAB))>,
-                // 左: 前タブ,,,,,,,,
+                // 左: 前タブ,,,,,,,,,
                 <&kp LC(TAB)>,
-                // 右: 次タブ,,,,,,,,
+                // 右: 次タブ,,,,,,,,,
                 <&kp LC(W)>,
-                // 下: 閉じる,,,,,,,,
+                // 下: 閉じる,,,,,,,,,
                 <&kp LC(T)>;
 
             // 上: 新規タブ
@@ -161,8 +161,8 @@
             bindings = <
 &kp Q             &kp W         &kp E         &kp R         &kp T                                                     &kp Y        &kp U  &lt 5 I    &lt 5 O  &lt 8 P
 &kp A             &kp S         &kp D         &kp F         &kp G        &kp LS(LG(S))               &kp BACKSPACE    &kp H        &kp J  &kp K      &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V         &kp B        &kp SINGLE_QUOTE            &kp SEMICOLON    &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 10 LANG2  &lt 2 SPACE  &lt_to_layer_0 3 LANG1      &lt 7 BACKSPACE  &lt 1 ENTER                             &lt 6 DEL
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V         &kp B        &lt 6 SINGLE_QUOTE          &kp SEMICOLON    &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 10 LANG2  &lt 2 SPACE  &lt_to_layer_0 3 LANG1      &lt 7 BACKSPACE  &lt 1 ENTER                             &kp DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(MINUS) LC(LS(SEMICOLON))>;
