@@ -337,7 +337,7 @@ layers:
   - Ctl+V
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+;
   - Ctl+N
   - Ctl+PAGE UP
   - {t: ▽, type: trans}
