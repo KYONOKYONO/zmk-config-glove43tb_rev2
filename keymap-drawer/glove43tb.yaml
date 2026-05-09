@@ -489,7 +489,7 @@ combos:
   k: TAB
 - p: [12, 13]
   k: Sft+TAB
-- p: [11, 10]
+- p: [22, 23]
   k: '&to_layer_0 INT_MUHENKAN'
 - p: [20, 21]
   k: '"'
